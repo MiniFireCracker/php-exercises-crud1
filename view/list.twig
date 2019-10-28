@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<?php
+
+$username = "root";
+$password = "root";
+$dbname = "colyseum";
+$servername = "localhost";
+
+try{
+	$pdo= "mysql:host=" . $servername . ";dbname=" . $dbname ";" . $username . "," . $password ;
+	$pdo->setAttribute(PDO:: ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+}catch(PDOException $e){
+	echo "Failed to establish connection" . $e->getMessage();
+}
+
+
+$stmt = pdo->query('SELECT * FROM clients');
+while($client = $stmt->fetchall()){
+	return $client;
+}
+
+?>	
+	<table>
+		<thead>
+			<th>id</th>
+			<th>lastname</th>
+			<th>firstname</th>
+			<th>birthday</th>
+			<th>card</th>
+			<th>cardnumber</th>
+		</thead>
+		<tbody>
+
+			<td>{{client}}</td>
+		</tbody>
+	</table>
+</body>
+</html>

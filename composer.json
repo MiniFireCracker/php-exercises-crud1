@@ -1,0 +1,12 @@
+{
+    "name": "elodie/php-exercises-crud1",
+    "authors": [
+        {
+            "name": "Gonzalez",
+            "email": "lodi31@neuf.fr"
+        }
+    ],
+    "require": {
+        "twig/twig": "^2.0"
+    }
+}
